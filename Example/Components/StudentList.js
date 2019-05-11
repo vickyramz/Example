@@ -44,6 +44,7 @@ dataset=(data)=>{
   })
   this.hide()
 }
+
 Load(){
   this.setState({animate:true})
 }
@@ -68,28 +69,21 @@ space(){
           renderItem={({item,separators})  =>
         <TouchableOpacity onShowUnderlay={separators.highlight}
       onHideUnderlay={separators.unhighlight} onPress = { this.clickedItemText.bind(this, item)}>
-      <View style={{flex:1,backgroundColor:(item.Status=='Completed')?'#fff':'#D3D3D3'}}>
+      <View style={{flex:1,backgroundColor:(item.Status=='Completed')?'#fff':'#fff'}}>
           <View style={{flex:1, flexDirection: 'row',justifyContent:'space-between'}}>
-          <View style={{flexDirection: 'row'}}> 
-          <Image    source={require("./Assets/student.png")} style={{marginLeft:20,marginTop:10,width:30,height:30}}></Image>     
-       <Text  style={{marginLeft:20,marginTop:10}}>Teacher</Text>   
-          </View>
-      
-       <Text  style={{marginRight:20,marginTop:10,color:'blue'}}>{item.SchoolName}</Text>    
-      </View>  
-      <View style={{flex:1, flexDirection: 'row',justifyContent:'space-between'}}>
-      <View style={{flexDirection: 'row'}}>
-      <Image    source={require("./Assets/student.png")} style={{marginLeft:20,marginTop:10,width:30,height:30}}></Image>     
-       <Text  style={{marginLeft:20,marginTop:10}}>{item.Distance+" Miles"}</Text> 
-      </View>
+          <View style={{flexDirection: 'row',justifyContent:"center",alignItems:'center'}}> 
+          <Image    source={require("./Assets/student.png")} style={{marginLeft:20,marginTop:10,width:50,height:50}}></Image>    
+          <View style={{flexDirection:'column'}}>
+          <Text  style={{marginLeft:20,marginTop:10}}>Elione</Text>   
+       <Text  style={{marginRight:20,color:'#000000'}}>student@gmail.com</Text>    
+          
+          </View> 
        
-       <Text  style={{marginRight:20,marginTop:10}}>{item.Status}</Text>    
-      </View>  
-      <View style={{flex:1, flexDirection: 'row'}}>
       
-      <Image    source={require("./Assets/student.png")} style={{marginLeft:20,marginTop:10,width:30,height:30}}></Image>     
-       <Text  style={{marginLeft:20,marginTop:10,marginBottom:20}}>{item.Subject}</Text>       
-      </View>
+          </View>   
+         
+      </View>  
+      
   </View>
        
   </TouchableOpacity>  
@@ -101,7 +95,7 @@ space(){
       }
       clickedItemText=(item)=>
       {
-          Alert.alert(item.Status)
+         this.props.navigation.navigate('StudentDetails');
       }
 }
 

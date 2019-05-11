@@ -48,7 +48,7 @@ export default class App extends React.Component {
         ListHeaderComponent={() => (
           <Button
             onPress={this.handleAdd}
-            title="Add Person"
+            title="Add Students"
           />
         )}
       />
