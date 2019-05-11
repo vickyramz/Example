@@ -1,10 +1,14 @@
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import Login from './Components/Login'
+import DashBoard from './Components/DashBoard'
+import StudentList from './Components/StudentList'
 import React, { Component } from 'react';
 import { AppRegistry, View } from 'react-native';
 const MainNavigator = createStackNavigator({
   
   Login: {screen: Login},
+  DashBoard: {screen: DashBoard},
+  StudentList: {screen: StudentList},
 
 });
 
