@@ -24,13 +24,14 @@ import { AppRegistry,Image,Text, StyleSheet,View ,TouchableOpacity} from 'react-
   </View>
           
           </TouchableOpacity>
+          <TouchableOpacity onPress={()=>navigate('AddStudents')}>
           <View style={{flexDirection:'column',marginLeft:40}}>
   <View style={styles.Googlecircle}>
           <Image source={require('./Assets/building.png')} style={styles.GoogleImage} />
           </View>
   <Text style={{color:'#fff',fontSize:20,fontWeight: 'bold',marginLeft:30,marginTop:10}}>SCHOOL</Text>
   </View>
-
+</TouchableOpacity>
 </View>
 <View style={{flexDirection:'row',justifyContent:'space-between',marginTop:20}}>
 <TouchableOpacity >
